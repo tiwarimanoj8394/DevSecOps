@@ -93,7 +93,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: /.
           push: true
           tags: |
             "${{ secrets.DOCKER_USERNAME }}/app:${{ github.run_number }}"
