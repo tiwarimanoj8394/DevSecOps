@@ -102,7 +102,7 @@ jobs:
     needs: [docker]
     steps:
       - name: Checkout code
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUBB_TOKEN }}
       - name: Update Deployment File with Build Number
