@@ -104,7 +104,7 @@ jobs:
       - name: Update Deployment File with Build Number
         env:
           BUILD_NUMBER: ${{ github.run_number }}  # Use GitHub Actions run number
-          GITHUB_TOKEN: ${{ secrets.GITHUBB_TOKEN }}
+          GITHUBB_TOKEN: ${{ secrets.GITHUBB_TOKEN }}
         run: |
           git config user.email "manoj.xyz@gmail.com"
           git config user.name "Manoj Tiwari"
