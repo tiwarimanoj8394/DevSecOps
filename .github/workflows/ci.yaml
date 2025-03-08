@@ -108,7 +108,7 @@ jobs:
           sed -i "s/latest/${BUILD_NUMBER}/g" kubernetes/deployment.yml
           git add kubernetes/deployment.yml
           git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-          git push https://${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
+          git push https://${GITHUBB_TOKEN}@github.com/${{ github.repository }} HEAD:main
            
     
     
