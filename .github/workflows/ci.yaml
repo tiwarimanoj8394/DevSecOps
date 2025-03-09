@@ -119,14 +119,15 @@ jobs:
         with:
           token: ${{ secrets.GITHUBB_TOKEN }}
       - name: Update Deployment File with Build Number
-        # env:
+        env:
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
           # BUILD_NUMBER: ${{ github.run_number }}  # Use GitHub Actions run number
           #GITHUBB_TOKEN: ${{ secrets.GITHUBB_TOKEN }}
         run: |
           git config user.email "manoj.xyz@gmail.com"
           git config user.name "Manoj Tiwari"
           # Replace 'replaceImageTag' with the unique build number or commit SHA
-          sed -i "s/\${{ github.run_number }}/RUN_NUMBER/g" kubernetes/deployment.yaml
+          sed -i "s/\${{ github.run_number }}/GITHUB_RUN_NUMBER/g" kubernetes/deployment.yaml
           git add kubernetes/deployment.yaml
           git commit -m "Update deployment image to version ${BUILD_NUMBER}"
           git push
