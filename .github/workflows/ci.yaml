@@ -95,7 +95,7 @@ jobs:
         with:
           push: true
           tags: |
-            "${{ secrets.DOCKER_USERNAME }}/app:${{ github.run_number }}"
+            "${{ secrets.DOCKER_USERNAME }}/DevSecOps:${{ github.run_number }}"
             
       # - name: Run Trivy vulnerability scanner
       #   uses: aquasecurity/trivy-action@master
@@ -125,7 +125,7 @@ jobs:
           git config user.email "manoj.xyz@gmail.com"
           git config user.name "Manoj Tiwari"
           # Replace 'replaceImageTag' with the unique build number or commit SHA
-          sed -i "s/latest/GITHUB_RUN_NUMBER/g" kubernetes/deployment.yaml
+          sed -i "s/latest/$GITHUB_RUN_NUMBER/g" kubernetes/deployment.yaml
           git add kubernetes/deployment.yaml
           git commit -m "Update deployment image to version ${GITHUB_RUN_NUMBER}"
           git push
