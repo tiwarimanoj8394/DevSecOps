@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tic-tac-toe
-        image: manojtiwari000/devsecops:23
+        image: manojtiwari000/devsecops:26
         # Image will be automatically updated by CI/CD pipeline
         imagePullPolicy: Always
         ports:
