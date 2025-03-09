@@ -95,7 +95,7 @@ jobs:
         with:
           push: true
           tags: |
-            "${{ secrets.DOCKER_USERNAME }}/DevSecOps:${{ github.run_number }}"
+            "${{ secrets.DOCKER_USERNAME }}/devsecops:${{ github.run_number }}"
             
       # - name: Run Trivy vulnerability scanner
       #   uses: aquasecurity/trivy-action@master
