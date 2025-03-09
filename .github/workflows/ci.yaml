@@ -126,7 +126,7 @@ jobs:
           git config user.email "manoj.xyz@gmail.com"
           git config user.name "Manoj Tiwari"
           # Replace 'replaceImageTag' with the unique build number or commit SHA
-          sed -i "s|image: manojtiwari000/devsecops/.*|image: ${NEW_IMAGE}|g" kubernetes/deployment.yaml
+          sed -i "s|image: manojtiwari000/devsecops:.*|image: ${NEW_IMAGE}|g" kubernetes/deployment.yaml
           # sed -i "s/manojtiwari000/devsecops/.*/$GITHUB_RUN_NUMBER/g" kubernetes/deployment.yaml
           git add kubernetes/deployment.yaml
           git commit -m "Update deployment image to version ${GITHUB_RUN_NUMBER}"
