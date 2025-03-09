@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tic-tac-toe
-        image: manojtiwari000/app:latest
+        image: manojtiwari000/app:GITHUB_RUN_NUMBER
         # Image will be automatically updated by CI/CD pipeline
         imagePullPolicy: Always
         ports:
